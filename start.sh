@@ -11,3 +11,5 @@ echo "Banco foi inicializado"
 echo "inicializado Aplicação"
 
 uvicorn main:app --host 0.0.0.0 --port $APP_PORT_GESTOR
+
+done
