@@ -33,14 +33,13 @@ def session():
     with open("./tests/data/insert_user.sql", "r") as f:
         session.execute(f.read())
         session.commit()
-    yield session
-    os.remove("test.db")
-
+    
     # Para o momento em que se for realizar testes nos enpoints
     with open("./tests/data/insert_disciplina.sql", "r") as f:
         session.execute(f.read())
         session.commit()
     yield session
+
     os.remove("test.db")
 
 @pytest.fixture(scope="function")
